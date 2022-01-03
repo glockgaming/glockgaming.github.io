@@ -1,0 +1,17 @@
+{
+    "description": "Profile Webpage for Glock Gaming",
+    "short_name": "Glock Gaming",
+    "start_url": "#hero",
+    "icons": [
+      {
+        "src": "./assets/img/favicon.webp",
+        "sizes": "336x336",
+        "type": "image/webp"
+      }
+    ],
+    "theme_color": "#8ec4dd",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "scope": "/",
+    "orientation": "portrait"
+  }

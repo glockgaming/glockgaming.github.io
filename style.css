@@ -306,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("./assets/img/hero-bg.jpg") top center;
+  background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("./assets/img/hero-bg.webp") top center;
   background-size: cover;
   position: relative;
   margin-bottom: -90px;
@@ -417,7 +417,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("./assets/img/about-bg.jpg") center center no-repeat;
+  background: url("./assets/img/about-bg.webp") center center no-repeat;
   background-size: cover;
   padding: 60px 0;
   position: relative;
@@ -601,7 +601,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(103, 176, 209, 0.8), rgba(103, 176, 209, 0.8)), url("./assets/img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(103, 176, 209, 0.8), rgba(103, 176, 209, 0.8)), url("./assets/img/cta-bg.webp") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
