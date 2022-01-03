@@ -1,7 +1,8 @@
 {
     "description": "Profile Webpage for Glock Gaming",
+    "name": "Glock Gaming",
     "short_name": "Glock Gaming",
-    "start_url": "#hero",
+    "start_url": "/",
     "icons": [
       {
         "src": "./assets/img/favicon.webp",
