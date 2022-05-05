@@ -40,9 +40,37 @@
   <!-- Template Main CSS File -->
   <link href="./style.css" rel="stylesheet">
 
+  <script type="text/javascript">
+    fetch('perms.json')
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (data) {
+          avail(data);
+      })
+      .catch(function (err) {
+          console.log('Error: ' + err);
+      });
+
+    function avail(data) {
+
+      var perm = (data.webpages).staffrec
+      if (perm == true){
+        document.getElementById("hero").style = "display: none;";
+        document.getElementById('theframe').style = ""
+        document.getElementById('footer').style = ""
+      }
+      else{
+        document.getElementById("hero").style = "";
+        document.getElementById('theframe').style = "display: none;"
+        document.getElementById('footer').style = "display: none;"
+      }
+    }
+  </script>
+
 </head>
 
-<body>
+<body onload="avail()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent">
@@ -67,12 +95,18 @@
     </div>
   </header><!-- End Header -->
 
+  <section id="hero" style="display: none;">
+    <div class="hero-container" data-aos="fade-up">
+      <h2>This Document is currently Unavailable</h2>
+    </div>
+  </section>
+
   <main id="main">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVxAaFIpnOYDdF-7GSK5-fyuWfw8_-zAKH-XFVSGQynu24Eg/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe id="theframe" style="display: none;" src="https://docs.google.com/forms/d/e/1FAIpQLSfVxAaFIpnOYDdF-7GSK5-fyuWfw8_-zAKH-XFVSGQynu24Eg/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </main> 
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" style="display: none;">
     <div class="footer-top">
       <div class="container">
         <div class="row">
