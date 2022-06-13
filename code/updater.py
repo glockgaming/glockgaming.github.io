@@ -51,14 +51,18 @@ print()
 for k,v in stats.items():
     vint = int(v)
     vstr = str(v)
-    if (vint < 999999) and (vint > 999):
-        val = vstr[0:1] + "." + vstr[1:3] + "K+"
-    elif (vint < 9999999) and (vint > 999999):
-        val = vstr[0:1] + "." + vstr[1:3] + "M+"
-    elif (vint < 99999999) and (vint > 9999999):
-        val = vstr[0:1] + "." + vstr[1:3] + "B+"
-    elif (vint < 999999999) and (vint > 99999999):
-        val = vstr[0:1] + "." + vstr[1:3] + "T+"
+    if (vint < 10000) and (vint > 999):
+        val = vstr[0:1] + "." + vstr[1:2] + "K+"
+    elif (vint < 100000) and (vint > 9999):
+        val = vstr[0:2] + "." + vstr[2:3] + "K+"
+    elif (vint < 1000000) and (vint > 99999):
+        val = vstr[0:3] + "." + vstr[3:4] + "K+"
+    elif (vint < 10000000) and (vint > 999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "M+"
+    elif (vint < 100000000) and (vint > 9999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "B+"
+    elif (vint < 1000000000) and (vint > 99999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "T+"
     else:
         val = vstr + "+"
     new_tag = soup.find("span", {"id": k})
