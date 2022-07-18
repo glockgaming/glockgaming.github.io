@@ -33,7 +33,7 @@ discordCount = data_json3["approximate_member_count"]
 stats = {"subscribers": subsCount, "videos": videoCount, "views": viewCount, "discordMembers": discordCount}
 
 base = os.path.dirname(os.path.abspath(__file__))
-html = open('./index.html')
+html = open('index.html')
 soup = bs(html, 'html.parser')
 
 print("HTML has been updated with the following details- ")
