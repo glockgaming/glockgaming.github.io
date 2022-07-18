@@ -1,4 +1,4 @@
-# glockgaming.github.io
+# glockgaming.github.io [![updater](https://github.com/glockgaming/glockgaming.github.io/actions/workflows/updater.yml/badge.svg)](https://github.com/glockgaming/glockgaming.github.io/actions/workflows/updater.yml)
 A One Page Website made for [Glock Gaming](https://www.youtube.com/c/GlockGamingYt) using [GitHub Pages](https://pages.github.com/).
 
 # Template
