@@ -1,6 +1,6 @@
 from dotenv import load_dotenv, find_dotenv
 from bs4 import BeautifulSoup as bs
-import os, requests, datetime
+import os, requests
 
 load_dotenv(find_dotenv())
 YT_API_KEY = os.getenv("YT_API_KEY")
@@ -30,13 +30,7 @@ subsCount = res2["subscriberCount"]
 videoCount = res2["videoCount"]
 viewCount = res2["viewCount"]
 discordCount = data_json3["approximate_member_count"]
-stats = {
-    "subscribers": subsCount,
-    "videos": videoCount,
-    "views": viewCount,
-    "discordMembers": discordCount,
-    "updateID": str(datetime.datetime.now())
-    }
+stats = {"subscribers": subsCount, "videos": videoCount, "views": viewCount, "discordMembers": discordCount}
 
 base = os.path.dirname(os.path.abspath(__file__))
 html = open('index.html')
@@ -55,24 +49,22 @@ for i in range(0,3):
 print()
 
 for k,v in stats.items():
-    try:
-        vint = int(v)
-        vstr = str(v)
-        if (vint < 10000) and (vint > 999):
-            val = vstr[0:1] + "." + vstr[1:2] + "K+"
-        elif (vint < 100000) and (vint > 9999):
-            val = vstr[0:2] + "." + vstr[2:3] + "K+"
-        elif (vint < 1000000) and (vint > 99999):
-            val = vstr[0:3] + "." + vstr[3:4] + "K+"
-        elif (vint < 10000000) and (vint > 999999):
-            val = vstr[0:1] + "." + vstr[1:2] + "M+"
-        elif (vint < 100000000) and (vint > 9999999):
-            val = vstr[0:1] + "." + vstr[1:2] + "B+"
-        elif (vint < 1000000000) and (vint > 99999999):
-            val = vstr[0:1] + "." + vstr[1:2] + "T+"
-        else:
-            val = vstr + "+"
-    except: pass
+    vint = int(v)
+    vstr = str(v)
+    if (vint < 10000) and (vint > 999):
+        val = vstr[0:1] + "." + vstr[1:2] + "K+"
+    elif (vint < 100000) and (vint > 9999):
+        val = vstr[0:2] + "." + vstr[2:3] + "K+"
+    elif (vint < 1000000) and (vint > 99999):
+        val = vstr[0:3] + "." + vstr[3:4] + "K+"
+    elif (vint < 10000000) and (vint > 999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "M+"
+    elif (vint < 100000000) and (vint > 9999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "B+"
+    elif (vint < 1000000000) and (vint > 99999999):
+        val = vstr[0:1] + "." + vstr[1:2] + "T+"
+    else:
+        val = vstr + "+"
     new_tag = soup.find("span", {"id": k})
     new_tag.string = val
     print(k + ": " + val)

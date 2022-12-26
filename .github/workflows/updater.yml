@@ -29,7 +29,13 @@ jobs:
           DISCORD_INVITE_ID: ${{ secrets.DISCORD_INVITE_ID }}
         run: python updater.py
           
+      - name: check for changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+      
       - name: commit files
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
