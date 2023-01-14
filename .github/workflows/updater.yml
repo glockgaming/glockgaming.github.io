@@ -5,8 +5,9 @@ on:
     - cron: '0 12 * * 1' # Runs at 12:00 UTC every Monday
 
 jobs:
-  build:
+  buildV1:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/v1'
     steps:
 
       - name: checkout repo content
