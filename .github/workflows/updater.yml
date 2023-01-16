@@ -7,11 +7,12 @@ on:
 jobs:
   buildV1:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/v1'
     steps:
 
       - name: checkout repo content
         uses: actions/checkout@v2
+        with:
+          ref: v1
 
       - name: setup python
         uses: actions/setup-python@v2
